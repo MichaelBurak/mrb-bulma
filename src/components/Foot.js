@@ -1,15 +1,21 @@
 import React, { Component } from "react";
 
+import Footer from "react-bulma-components/lib/components/footer";
+import Container from "react-bulma-components/lib/components/container";
+import Content from "react-bulma-components/lib/components/content";
+
 class Foot extends Component {
   render() {
     return (
-      <footer className="footer">
-        <div className="content has-text-centered">
-          <p>
-            <strong>Logos</strong>
-          </p>
-        </div>
-      </footer>
+      <Footer>
+        <Container>
+          <Content style={{ textAlign: "center" }}>
+            <p>
+              <strong>Logos</strong>
+            </p>
+          </Content>
+        </Container>
+      </Footer>
     );
   }
 }
