@@ -1,38 +1,23 @@
 import React, { Component } from "react";
-import Navbar from "react-bulma-components/lib/components/navbar";
+
+import Tabs from "react-bulma-components/lib/components/tabs";
+import Hero from "react-bulma-components/lib/components/hero";
+import Section from "react-bulma-components/lib/components/section";
+import Container from "react-bulma-components/lib/components/container";
 
 class Navigate extends Component {
-  constructor(props) {
-    // Required step: always call the parent class' constructor
-    super(props);
-
-    // Set the state directly. Use props if necessary.
-    this.state = {
-      opened: true
-    };
-  }
   render() {
     return (
-      <Navbar>
-        <Navbar.Brand>
-          <Navbar.Item renderAs="a" href="#">
-            <strong>Home</strong>
-          </Navbar.Item>
-          <Navbar.Burger
-            active={this.state.opened}
-            onClick={() =>
-              this.setState(state => {
-                return { opened: !this.state.opened };
-              })
-            }
-          />
-        </Navbar.Brand>
-        <Navbar.Menu active={this.state.opened}>
-          <Navbar.Container>
-            <Navbar.Item href="#">About</Navbar.Item>
-          </Navbar.Container>
-        </Navbar.Menu>
-      </Navbar>
+      <Hero color="white" gradient>
+        <Hero.Body>
+          <Container>
+            <Tabs>
+              <Tabs.Tab active>HOME</Tabs.Tab>
+              <Tabs.Tab>About</Tabs.Tab>
+            </Tabs>
+          </Container>
+        </Hero.Body>
+      </Hero>
     );
   }
 }
